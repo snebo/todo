@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: rgb(245, 253, 255);
+  display: flex;
+  flex-direction: column;
+}
+nav {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 0 40px;
+}
+.page_title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+nav > ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+  font-size: 18px;
+}
+nav > ul > li > a {
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+  transition: 300ms all ease;
+}
+nav > ul > li:hover {
+  border-bottom: 2px solid white;
+}
+footer {
+  margin-top: auto;
+  padding: 10px 40px;
+  height: 80px;
+  background-color: rgb(43, 43, 43);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+main {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 6fr;
+}
+.project-list {
+  grid-area: 1 / 1 / -1 / 1;
+}
+.tasks-list {
+  grid-area: 2 / 2 / -1 / -1;
+}
+.project-info {
+  grid-area: 1 / 2 / 2 / -1;
+}
+main > * {
+  border: 1px solid;
+}
+.projectList > li {
+  margin: 10px 0;
+  border: 1px solid;
+  width: 100%;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+
+  list-style-type: none;
+  transition: 250ms ease-in-out;
+}
+.projectList > li:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+a.project {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.projectList > li.active {
+  border: 3px solid black;
+}
+.create-project {
+  margin-top: 10px;
+  display: flex;
+}
+#projectName {
+  height: 50px;
+  padding: 5px;
+  font-size: 18px;
+  border-right: none;
+  border-radius: 12px 0 0 12px;
+}
+#addProject {
+  font-size: 14px;
+  border-radius: 0 12px 12px 0;
+}
+.project-info {
+  padding: 20px 20px 0 20px;
+}
+h2#projectTitle {
+  text-align: center;
+  font-size: 28px;
+}
+.tasks-list {
+  padding: 20px 40px;
+  /* width: 100%; */
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  /* gap: 20px; */
+}
+#taskList {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+#create-task,
+.task,
+#task-form {
+  height: 250px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 10px;
+
+  cursor: pointer;
+  transition: 200ms all ease-in-out;
+}
+#create-task:hover,
+#task-form:hover,
+.task:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+#create-task > * {
+  margin: 10px 0;
+}
+.edit-details {
+  margin-top: 30px;
+  display: none;
+}
+.edit-details.show {
+  display: block;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+.priority {
+  width: 70%;
+  height: 10px;
+  border: 1px solid;
+}
+.priority.Low {
+  background-color: aqua;
+}
+.priority.Medium {
+  background-color: coral;
+}
+.priority.High {
+  background-color: crimson;
+}
+
+.task {
+  position: relative;
+}
+
+.delete-task {
+  position: absolute;
+  color: red;
+  cursor: pointer;
+  top: 5px;
+  right: 10px;
+  padding: 10px 5px;
+  border-radius: 12px;
+}
+.edit-task-form {
+  width: 250px;
+  aspect-ratio: 1/1;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
